@@ -3,11 +3,13 @@ import { useScrollReveal } from "./useScrollReveal";
 
 const tabData: Record<string, { title: string; desc: string }[]> = {
   small: [
-    { title: "Brand Đăng Ký Campaign", desc: "Trên Brand Portal, Brand chọn sản phẩm, mục tiêu (xả tồn, launch sản phẩm mới, tăng nhận diện...) và thống nhất cấu trúc góp vốn." },
-    { title: "Góp Vốn Bằng Hàng Hóa", desc: 'Brand chuyển một lượng hàng vào kho NONE (None Retail Hub), được định giá thương mại và ghi nhận là "vốn hàng" cho campaign.' },
-    { title: "Góp Thêm Tiền Marketing", desc: "Brand có thể góp thêm tiền mặt marketing để chạy media, sản xuất nội dung và thưởng thêm cho Creator." },
-    { title: "Creator Tạo Nội Dung", desc: 'Creator kêu gọi fan "ủng hộ" — user trả tiền và nhận sản phẩm thật kèm quyền lợi fan.' },
-    { title: "Chia Doanh Thu Đa Bên", desc: "Doanh thu chia lại cho Creator · dCreator · NONE theo tỷ lệ thỏa thuận." },
+    { title: "dCreator thiết kế camp", desc: "dCreator xây concept chiến dịch, mục tiêu tăng trưởng, cơ chế tham gia và timeline triển khai phù hợp từng ngành hàng." },
+    { title: "Mời brand tham dự", desc: "Danh sách brand phù hợp được tiếp cận với proposal rõ KPI, quyền lợi truyền thông và ngân sách dự kiến cho từng hạng mục." },
+    { title: "Chốt phương án hợp tác", desc: "Hai bên thống nhất gói hợp tác gồm sản phẩm, ngân sách, chỉ số cam kết, điều khoản vận hành và mốc thanh toán." },
+    { title: "Kích hoạt camp và kéo user/creator", desc: "Chiến dịch được kích hoạt đồng thời trên các kênh để thu hút creator tham gia, kéo user vào phễu và tạo đà tương tác sớm." },
+    { title: "Phân phối phần thưởng và quyền lợi", desc: "Hệ thống ghi nhận đóng góp theo thời gian thực để phân bổ voucher, quà tặng, ưu đãi hoặc quyền lợi fan đúng cơ chế đã công bố." },
+    { title: "Nghiệm thu cùng brand & trả thù lao cho Creator", desc: "dCreator đối soát kết quả với brand, nghiệm thu đầu việc và thanh toán thù lao cho creator minh bạch theo hiệu suất thực tế." },
+    { title: "Kết thúc chiến dịch", desc: "Tổng kết báo cáo cuối kỳ, rút kinh nghiệm tối ưu cho đợt tiếp theo và chuyển dữ liệu insight sang giai đoạn tăng trưởng mới." },
   ],
   large: [
     { title: "Creator Đề Xuất Dự Án", desc: "Creator mang ý tưởng (MV, mini series, show...) và tệp fan lên dCreator." },
@@ -18,13 +20,13 @@ const tabData: Record<string, { title: string; desc: string }[]> = {
   ],
 };
 
-const stepColors = [
-  "bg-primary text-primary-foreground border border-primary/20 shadow-[0_8px_18px_hsla(359,74%,52%,0.2)]",
-  "bg-card text-foreground border border-border",
-  "bg-primary/85 text-primary-foreground border border-primary/20",
-  "bg-card text-foreground border border-border",
-  "bg-primary text-primary-foreground border border-primary/20 shadow-[0_8px_18px_hsla(359,74%,52%,0.2)]",
-];
+const getStepColorClass = (index: number) => {
+  if (index % 2 === 0) {
+    return "bg-primary text-primary-foreground border border-primary/20 shadow-[0_8px_18px_hsla(359,74%,52%,0.2)]";
+  }
+
+  return "bg-card text-foreground border border-border";
+};
 
 const HowItWorksSection = () => {
   const [tab, setTab] = useState<"small" | "large">("small");
@@ -57,15 +59,15 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Steps */}
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-0">
+        <div className={`relative grid grid-cols-1 sm:grid-cols-2 ${tab === "small" ? "md:grid-cols-7" : "md:grid-cols-5"} gap-6 md:gap-0`}>
           <div className="hidden md:block absolute top-7 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
           {tabData[tab].map((s, i) => (
             <div key={`${tab}-${i}`} className="text-left md:text-center px-0 sm:px-3">
-              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center md:mx-auto mb-4 md:mb-5 font-display text-[19px] md:text-[22px] tracking-wide relative z-10 hover:scale-110 transition-transform ${stepColors[i]}`}>
+              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center md:mx-auto mb-4 md:mb-5 font-display text-[19px] md:text-[22px] tracking-wide relative z-10 hover:scale-110 transition-transform ${getStepColorClass(i)}`}>
                 {String(i + 1).padStart(2, "0")}
               </div>
               <h4 className="text-[13px] sm:text-[14px] font-semibold text-foreground mb-2.5 leading-tight">{s.title}</h4>
-              <p className="text-[12px] sm:text-[13px] text-muted-foreground leading-relaxed">{s.desc}</p>
+              {s.desc && <p className="text-[12px] sm:text-[13px] text-muted-foreground leading-relaxed">{s.desc}</p>}
             </div>
           ))}
         </div>
