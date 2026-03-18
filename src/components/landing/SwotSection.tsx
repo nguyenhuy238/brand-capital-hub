@@ -38,10 +38,10 @@ const swotData = [
 ];
 
 const typeStyles: Record<string, { bg: string; tagBg: string; tagText: string; letterColor: string }> = {
-  s: { bg: "bg-primary/[0.12]", tagBg: "bg-primary/30", tagText: "text-lavender", letterColor: "text-violet" },
-  o: { bg: "bg-emerald-500/[0.08]", tagBg: "bg-emerald-500/20", tagText: "text-emerald-300", letterColor: "text-emerald-400" },
-  w: { bg: "bg-red-500/[0.08]", tagBg: "bg-red-500/20", tagText: "text-red-300", letterColor: "text-red-400" },
-  t: { bg: "bg-yellow-500/[0.08]", tagBg: "bg-yellow-500/20", tagText: "text-yellow-200", letterColor: "text-yellow-400" },
+  s: { bg: "bg-card border border-border", tagBg: "bg-primary/12", tagText: "text-primary", letterColor: "text-primary" },
+  o: { bg: "bg-card border border-border", tagBg: "bg-emerald-500/12", tagText: "text-emerald-700", letterColor: "text-emerald-700" },
+  w: { bg: "bg-card border border-border", tagBg: "bg-red-500/12", tagText: "text-red-700", letterColor: "text-red-700" },
+  t: { bg: "bg-card border border-border", tagBg: "bg-yellow-500/14", tagText: "text-yellow-700", letterColor: "text-yellow-700" },
 };
 
 const SwotSection = () => {
@@ -68,7 +68,7 @@ const SwotSection = () => {
               <h3 className="font-display text-[22px] tracking-wide text-foreground mb-4">{s.title}</h3>
               <ul className="flex flex-col gap-2.5">
                 {s.items.map((item, j) => (
-                  <li key={j} className="text-sm text-muted-foreground leading-relaxed pl-5 relative before:content-['→'] before:absolute before:left-0 before:text-violet before:text-xs">
+                  <li key={j} className="text-sm text-muted-foreground leading-relaxed pl-5 relative before:content-['→'] before:absolute before:left-0 before:text-primary before:text-xs">
                     {item}
                   </li>
                 ))}

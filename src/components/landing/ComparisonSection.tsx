@@ -35,15 +35,15 @@ const ComparisonSection = () => {
               <tr>
                 <th className="text-left p-4 text-[12px] tracking-[1.5px] uppercase font-semibold text-muted-foreground border-b border-primary/20">Tiêu chí</th>
                 <th className="text-left p-4 text-[12px] tracking-[1.5px] uppercase font-semibold text-muted-foreground border-b border-primary/20">TikTok / Sàn TMĐT</th>
-                <th className="text-left p-4 text-[12px] tracking-[1.5px] uppercase font-semibold text-lavender border-b border-primary/20 bg-primary/[0.08]">✦ dCreator</th>
+                <th className="text-left p-4 text-[12px] tracking-[1.5px] uppercase font-semibold text-foreground border-b border-primary/20 bg-primary/[0.08]">✦ dCreator</th>
               </tr>
             </thead>
             <tbody>
               {rows.map((r, i) => (
                 <tr key={i}>
-                  <td className="p-4 border-b border-foreground/5 text-foreground font-medium">{r[0]}</td>
-                  <td className={`p-4 border-b border-foreground/5 ${getIcon(r[1])}`}>{r[1]}</td>
-                  <td className={`p-4 border-b border-foreground/5 bg-primary/5 font-medium ${getIcon(r[2])}`}>{r[2]}</td>
+                  <td className="p-4 border-b border-border text-foreground font-medium">{r[0]}</td>
+                  <td className={`p-4 border-b border-border ${getIcon(r[1])}`}>{r[1]}</td>
+                  <td className={`p-4 border-b border-border bg-primary/5 font-medium ${getIcon(r[2])}`}>{r[2]}</td>
                 </tr>
               ))}
             </tbody>
