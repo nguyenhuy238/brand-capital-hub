@@ -3,9 +3,9 @@ import { useScrollReveal } from "./useScrollReveal";
 
 const tabData: Record<string, { title: string; desc: string }[]> = {
   small: [
-    { title: "Brand Đăng Ký Chiến Dịch", desc: "Brand chọn sản phẩm, mục tiêu và hình thức góp vốn qua Brand Portal." },
-    { title: "Hàng Vào Kho NONE O2O", desc: "Toàn bộ hàng vào hạ tầng NONE — kho, đóng gói, giao nhận minh bạch." },
-    { title: "dCreator Thiết Kế Camp", desc: 'Hàng hóa biến thành "vốn" cho các dự án sáng tạo: phim, video, livestream...' },
+    { title: "Brand Đăng Ký Campaign", desc: "Trên Brand Portal, Brand chọn sản phẩm, mục tiêu (xả tồn, launch sản phẩm mới, tăng nhận diện...) và thống nhất cấu trúc góp vốn." },
+    { title: "Góp Vốn Bằng Hàng Hóa", desc: 'Brand chuyển một lượng hàng vào kho NONE (None Retail Hub), được định giá thương mại và ghi nhận là "vốn hàng" cho campaign.' },
+    { title: "Góp Thêm Tiền Marketing", desc: "Brand có thể góp thêm tiền mặt marketing để chạy media, sản xuất nội dung và thưởng thêm cho Creator." },
     { title: "Creator Tạo Nội Dung", desc: 'Creator kêu gọi fan "ủng hộ" — user trả tiền và nhận sản phẩm thật kèm quyền lợi fan.' },
     { title: "Chia Doanh Thu Đa Bên", desc: "Doanh thu chia lại cho Creator · dCreator · NONE theo tỷ lệ thỏa thuận." },
   ],
