@@ -1,9 +1,14 @@
 const navLinks = [
   { href: "#problem", label: "Vấn Đề" },
   { href: "#solution", label: "Giải Pháp" },
+  { href: "#none-ecosystem", label: "NONE O2O" },
   { href: "#how", label: "Cách Hoạt Động" },
-  { href: "#why", label: "Lợi Thế" },
-  { href: "#cta", label: "Liên Hệ" },
+  { href: "#why-now", label: "Why Now" },
+  { href: "#market", label: "Thị Trường" },
+  { href: "#business-model", label: "Mô Hình" },
+  { href: "#team", label: "Đội Ngũ" },
+  { href: "#vision", label: "Tầm Nhìn" },
+  { href: "#strategic-invite", label: "Hợp Tác" },
 ];
 
 const Navbar = () => {
@@ -12,7 +17,7 @@ const Navbar = () => {
       <span className="font-display text-[28px] tracking-[3px] text-primary">
         dCreator
       </span>
-      <div className="hidden md:flex items-center gap-9">
+      <div className="hidden md:flex items-center gap-6">
         {navLinks.map((l) => (
           <a
             key={l.href}
