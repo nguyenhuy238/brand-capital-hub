@@ -9,9 +9,7 @@ const fadeUp = (delay = 0) => ({
 
 const stats = [
   { num: "3", label: "Bên cùng hưởng lợi" },
-  { num: "O2O", label: "Online to Offline" },
   { num: "B2B2C", label: "Mô Hình Kinh Doanh" },
-  { num: "∞", label: "Vòng lặp doanh thu" },
 ];
 
 const Hero = () => (
@@ -52,7 +50,7 @@ const Hero = () => (
         </a>
       </motion.div>
 
-      <motion.div {...fadeUp(0.4)} className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 md:gap-10 mt-14 md:mt-20 max-w-3xl mx-auto">
+      <motion.div {...fadeUp(0.4)} className="grid grid-cols-2 gap-6 sm:gap-10 mt-14 md:mt-20 max-w-xl mx-auto">
         {stats.map((s, i) => (
           <div key={i} className="text-center">
             <div className="font-display text-[34px] sm:text-[42px] tracking-wide text-primary leading-none">{s.num}</div>
