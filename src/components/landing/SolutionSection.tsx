@@ -13,14 +13,17 @@ const SolutionSection = () => {
 
   return (
     <section id="solution" className="py-24 px-6 md:px-16 bg-background">
+      <div className="max-w-6xl mx-auto text-center mb-12 md:mb-16">
+        <div className="flex items-center justify-center gap-3 text-[11px] tracking-[3px] uppercase text-accent font-semibold mb-4">
+          <span className="w-8 h-px bg-accent" />Giải Pháp
+        </div>
+        <h2 className="font-display tracking-wide" style={{ fontSize: "clamp(42px, 6vw, 72px)", lineHeight: 1 }}>
+          MỘT SÂN CHƠI<br /><span className="text-gradient">BA BÊN CÙNG THẮNG</span>
+        </h2>
+      </div>
+
       <div ref={ref} className={`grid grid-cols-1 md:grid-cols-2 gap-20 items-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div>
-          <div className="flex items-center gap-3 text-[11px] tracking-[3px] uppercase text-accent font-semibold mb-4">
-            <span className="w-8 h-px bg-accent" />Giải Pháp
-          </div>
-          <h2 className="font-display tracking-wide mb-8" style={{ fontSize: "clamp(42px, 6vw, 72px)", lineHeight: 1 }}>
-            MỘT SÂN CHƠI<br /><span className="text-gradient">BA BÊN CÙNG THẮNG</span>
-          </h2>
           <p className="text-base text-muted-foreground leading-relaxed mb-4">
             dCreator xây dựng hệ thống Social Commerce kết hợp O2O — cho phép Brand, Creator, User tự tạo sân chơi để cùng chia sẻ rủi ro và lợi ích xung quanh doanh thu thực tế.
           </p>
