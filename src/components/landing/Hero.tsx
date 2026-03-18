@@ -1,4 +1,5 @@
 import { motion, type Easing } from "framer-motion";
+import EcosystemDiagram from "./EcosystemDiagram";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -9,6 +10,7 @@ const fadeUp = (delay = 0) => ({
 const stats = [
   { num: "3", label: "Bên cùng hưởng lợi" },
   { num: "O2O", label: "Online to Offline" },
+  { num: "B2B2C", label: "Mô Hình Kinh Doanh" },
   { num: "∞", label: "Vòng lặp doanh thu" },
 ];
 
@@ -18,39 +20,34 @@ const Hero = () => (
     className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 md:px-16 pt-28 pb-20"
     style={{
       backgroundImage:
-        "linear-gradient(45deg, hsla(280,60%,55%,0.07) 1px, transparent 1px), linear-gradient(-45deg, hsla(280,60%,55%,0.07) 1px, transparent 1px)",
-      backgroundSize: "50px 50px",
+        "linear-gradient(0deg, hsla(220,14%,86%,0.28) 1px, transparent 1px), linear-gradient(90deg, hsla(220,14%,86%,0.22) 1px, transparent 1px), linear-gradient(180deg, hsla(220,18%,96%,1) 0%, hsla(220,22%,93%,1) 100%)",
+      backgroundSize: "48px 48px, 48px 48px, 100% 100%",
     }}
   >
     {/* BG radials */}
     <div className="absolute inset-0 pointer-events-none" style={{
       background:
-        "radial-gradient(ellipse 80% 60% at 50% 40%, hsla(263,70%,50%,0.35) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 20% 80%, hsla(330,80%,55%,0.2) 0%, transparent 60%), radial-gradient(ellipse 40% 30% at 80% 20%, hsla(280,60%,55%,0.25) 0%, transparent 60%)"
+        "radial-gradient(ellipse 68% 48% at 50% 36%, hsla(359,74%,52%,0.12) 0%, transparent 70%), radial-gradient(ellipse 52% 38% at 20% 82%, hsla(220,12%,74%,0.22) 0%, transparent 65%), radial-gradient(ellipse 42% 34% at 82% 18%, hsla(359,74%,52%,0.08) 0%, transparent 60%)"
     }} />
 
-    <div className="relative z-10 text-center max-w-[900px]">
-      <motion.div {...fadeUp()} className="inline-flex items-center gap-2.5 bg-primary/15 border border-primary/30 px-5 py-2 rounded-full text-[12px] tracking-[2px] uppercase text-lavender mb-8">
+    <div className="relative z-10 text-center max-w-[1080px] w-full">
+      <motion.div {...fadeUp()} className="inline-flex items-center gap-2.5 bg-card/70 border border-border px-5 py-2 rounded-full text-[12px] tracking-[2px] uppercase text-foreground/75 mb-8">
         <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse-dot" />
         Social Commerce × O2O Platform · Vietnam
       </motion.div>
 
-      <motion.h1 {...fadeUp(0.1)} className="font-display leading-[0.95] tracking-tight mb-2" style={{ fontSize: "clamp(64px, 10vw, 120px)" }}>
-        <span className="block text-foreground">BIẾN HÀNG HÓA</span>
-        <span className="block text-gradient">THÀNH VỐN</span>
-        <span className="block text-foreground">SÁNG TẠO</span>
-      </motion.h1>
+      <EcosystemDiagram />
 
       <motion.p {...fadeUp(0.2)} className="text-lg text-muted-foreground leading-relaxed max-w-[580px] mx-auto mt-7 mb-12 font-light">
-        dCreator là nền tảng đầu tiên tại Việt Nam kết nối{" "}
-        <strong className="text-lavender font-semibold">Brand · Creator · User</strong> trong một hệ sinh thái Social Commerce O2O —
-        nơi hàng hóa trở thành vốn đầu tư cho nội dung sáng tạo.
+        dCreator nền tảng đầu tiên tại Việt Nam giúp Brand, Creator và Users cùng nhau hợp tác để bán hàng,
+        thay vì chỉ quảng cáo đơn thuần.
       </motion.p>
 
       <motion.div {...fadeUp(0.3)} className="flex gap-4 justify-center flex-wrap">
-        <a href="#solution" className="bg-gradient-primary text-primary-foreground px-10 py-4 rounded-full text-[15px] font-semibold shadow-[0_0_40px_hsla(280,60%,55%,0.4)] hover:translate-y-[-3px] hover:shadow-[0_0_60px_hsla(280,60%,55%,0.6)] transition-all inline-block">
+        <a href="#solution" className="bg-primary text-primary-foreground px-10 py-4 rounded-full text-[15px] font-semibold shadow-[0_12px_30px_hsla(359,74%,52%,0.25)] hover:translate-y-[-2px] hover:shadow-[0_18px_34px_hsla(359,74%,52%,0.28)] transition-all inline-block">
           Khám Phá Mô Hình
         </a>
-        <a href="#cta" className="border border-primary/40 text-lavender px-10 py-4 rounded-full text-[15px] font-medium hover:bg-primary/10 hover:border-violet transition-all inline-block">
+        <a href="#cta" className="border border-border text-foreground px-10 py-4 rounded-full text-[15px] font-medium bg-card/60 hover:bg-card transition-all inline-block">
           Liên Hệ Hợp Tác
         </a>
       </motion.div>
@@ -60,7 +57,7 @@ const Hero = () => (
           <div key={i} className="flex items-center gap-8 md:gap-16">
             {i > 0 && <div className="w-px h-12 bg-primary/20 hidden md:block" style={{ marginLeft: i > 0 ? 0 : undefined }} />}
             <div className="text-center">
-              <div className="font-display text-[42px] tracking-wide text-gradient leading-none">{s.num}</div>
+              <div className="font-display text-[42px] tracking-wide text-primary leading-none">{s.num}</div>
               <div className="text-[11px] text-muted-foreground tracking-[1.5px] uppercase mt-1.5">{s.label}</div>
             </div>
           </div>
@@ -71,7 +68,7 @@ const Hero = () => (
     {/* Scroll hint */}
     <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground text-[11px] tracking-[2px] uppercase">
       <span>scroll</span>
-      <div className="w-px h-12 bg-gradient-to-b from-violet to-transparent animate-scroll-line" />
+      <div className="w-px h-12 bg-gradient-to-b from-primary/60 to-transparent animate-scroll-line" />
     </div>
   </section>
 );

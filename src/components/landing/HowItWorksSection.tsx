@@ -19,11 +19,11 @@ const tabData: Record<string, { title: string; desc: string }[]> = {
 };
 
 const stepColors = [
-  "bg-primary/90 shadow-[0_0_20px_hsla(263,70%,50%,0.4)]",
-  "bg-[hsla(271,81%,46%,0.9)] shadow-[0_0_20px_hsla(271,81%,46%,0.4)]",
-  "bg-secondary/90 shadow-[0_0_20px_hsla(280,60%,55%,0.4)]",
-  "bg-[hsla(292,76%,49%,0.9)] shadow-[0_0_20px_hsla(292,76%,49%,0.4)]",
-  "bg-accent/90 shadow-[0_0_20px_hsla(330,80%,55%,0.4)]",
+  "bg-primary text-primary-foreground border border-primary/20 shadow-[0_8px_18px_hsla(359,74%,52%,0.2)]",
+  "bg-card text-foreground border border-border",
+  "bg-primary/85 text-primary-foreground border border-primary/20",
+  "bg-card text-foreground border border-border",
+  "bg-primary text-primary-foreground border border-primary/20 shadow-[0_8px_18px_hsla(359,74%,52%,0.2)]",
 ];
 
 const HowItWorksSection = () => {
@@ -41,16 +41,16 @@ const HowItWorksSection = () => {
         </h2>
 
         {/* Tabs */}
-        <div className="flex gap-1 bg-foreground/5 p-1.5 rounded-full w-fit mt-12 mb-12">
+        <div className="flex gap-1 bg-card p-1.5 rounded-full w-fit mt-12 mb-12 border border-border">
           <button
             onClick={() => setTab("small")}
-            className={`px-7 py-3 rounded-full text-sm font-medium tracking-wide transition-all ${tab === "small" ? "bg-gradient-primary text-primary-foreground" : "text-muted-foreground"}`}
+            className={`px-7 py-3 rounded-full text-sm font-medium tracking-wide transition-all ${tab === "small" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
           >
             Creator Nhỏ Lẻ
           </button>
           <button
             onClick={() => setTab("large")}
-            className={`px-7 py-3 rounded-full text-sm font-medium tracking-wide transition-all ${tab === "large" ? "bg-gradient-primary text-primary-foreground" : "text-muted-foreground"}`}
+            className={`px-7 py-3 rounded-full text-sm font-medium tracking-wide transition-all ${tab === "large" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
           >
             Creator Lớn / Dự Án
           </button>
@@ -58,7 +58,7 @@ const HowItWorksSection = () => {
 
         {/* Steps */}
         <div className="relative grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-0">
-          <div className="hidden md:block absolute top-7 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-violet to-transparent" />
+          <div className="hidden md:block absolute top-7 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
           {tabData[tab].map((s, i) => (
             <div key={`${tab}-${i}`} className="text-center px-3">
               <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5 font-display text-[22px] tracking-wide relative z-10 hover:scale-110 transition-transform ${stepColors[i]}`}>

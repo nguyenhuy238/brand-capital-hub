@@ -32,8 +32,8 @@ const ProblemSection = () => {
         <div className="flex items-center gap-3 text-[11px] tracking-[3px] uppercase text-accent font-semibold mb-4">
           <span className="w-8 h-px bg-accent" />Vấn Đề
         </div>
-        <h2 className="font-display tracking-wide" style={{ fontSize: "clamp(42px, 6vw, 72px)", lineHeight: 1 }}>
-          THỊ TRƯỜNG ĐANG<br /><span className="text-gradient">GÃY Ở ĐÂU?</span>
+        <h2 className="font-display tracking-wide text-center" style={{ fontSize: "clamp(42px, 6vw, 72px)", lineHeight: 1 }}>
+          <span className="text-gradient">VẤN ĐỀ VÀ GIẢI PHÁP SÁNG TẠO</span>
         </h2>
       </div>
 

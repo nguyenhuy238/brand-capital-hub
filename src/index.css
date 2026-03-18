@@ -1,60 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Display:wght@400;600;700;800&family=Noto+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap&subset=vietnamese');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply font-sans;
+  }
+
+  body {
+    @apply font-sans;
+  }
+
   :root {
-    --background: 260 50% 5%;
-    --foreground: 270 50% 97%;
+    --background: 220 24% 96%;
+    --foreground: 224 28% 12%;
 
-    --card: 260 45% 8%;
-    --card-foreground: 270 50% 97%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 28% 12%;
 
-    --popover: 260 45% 8%;
-    --popover-foreground: 270 50% 97%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 28% 12%;
 
-    --primary: 263 70% 50%;
-    --primary-foreground: 270 50% 97%;
+    --primary: 359 74% 52%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 60% 55%;
-    --secondary-foreground: 270 50% 97%;
+    --secondary: 220 12% 90%;
+    --secondary-foreground: 224 28% 12%;
 
-    --muted: 260 30% 12%;
-    --muted-foreground: 265 25% 60%;
+    --muted: 220 14% 90%;
+    --muted-foreground: 221 12% 43%;
 
-    --accent: 330 80% 55%;
-    --accent-foreground: 270 50% 97%;
+    --accent: 355 86% 58%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 265 40% 20%;
-    --input: 265 40% 20%;
-    --ring: 263 70% 50%;
+    --border: 220 16% 84%;
+    --input: 220 16% 84%;
+    --ring: 359 74% 52%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 260 50% 5%;
-    --sidebar-foreground: 265 25% 60%;
-    --sidebar-primary: 263 70% 50%;
-    --sidebar-primary-foreground: 270 50% 97%;
-    --sidebar-accent: 260 30% 12%;
-    --sidebar-accent-foreground: 270 50% 97%;
-    --sidebar-border: 265 40% 20%;
-    --sidebar-ring: 263 70% 50%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 221 12% 43%;
+    --sidebar-primary: 359 74% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 90%;
+    --sidebar-accent-foreground: 224 28% 12%;
+    --sidebar-border: 220 16% 84%;
+    --sidebar-ring: 359 74% 52%;
 
     /* Custom tokens */
-    --violet: 263 70% 50%;
-    --lavender: 258 95% 85%;
-    --pink: 330 80% 55%;
-    --pink-light: 330 70% 65%;
-    --dark2: 260 50% 7%;
-    --dark3: 260 40% 10%;
+    --violet: 359 74% 52%;
+    --lavender: 224 24% 18%;
+    --pink: 355 86% 58%;
+    --pink-light: 357 66% 46%;
+    --dark2: 220 18% 93%;
+    --dark3: 0 0% 100%;
 
-    --grad-primary: linear-gradient(135deg, hsl(263 70% 50%) 0%, hsl(280 60% 55%) 40%, hsl(330 80% 55%) 100%);
-    --grad-secondary: linear-gradient(135deg, hsl(271 81% 22%) 0%, hsl(263 70% 50%) 50%, hsl(338 78% 35%) 100%);
+    --grad-primary: linear-gradient(135deg, hsl(359 78% 48%) 0%, hsl(359 74% 52%) 55%, hsl(5 82% 58%) 100%);
+    --grad-secondary: linear-gradient(140deg, hsl(222 20% 96%) 0%, hsl(220 14% 90%) 52%, hsl(222 16% 86%) 100%);
   }
 }
 
@@ -63,8 +71,11 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Space Grotesk', sans-serif;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Noto Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   html {
     scroll-behavior: smooth;
@@ -73,10 +84,14 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Noto Sans Display', 'Manrope', 'Bebas Neue', sans-serif;
+    font-weight: 700;
   }
   .font-serif-display {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Noto Serif', 'DM Serif Display', Georgia, serif;
+  }
+  .font-manrope {
+    font-family: 'Manrope', 'Noto Sans', sans-serif;
   }
   .text-gradient {
     background: var(--grad-primary);

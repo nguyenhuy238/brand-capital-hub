@@ -13,6 +13,37 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: [
+          'Noto Sans',
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+        ],
+        serif: [
+          'Noto Serif',
+          'DM Serif Display',
+          'Georgia',
+          'serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+        ],
+        display: [
+          'Noto Sans Display',
+          'Manrope',
+          'Bebas Neue',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+        ],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

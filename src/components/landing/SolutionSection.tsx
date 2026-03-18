@@ -1,12 +1,12 @@
 import { useScrollReveal } from "./useScrollReveal";
 
 const revenueCards = [
-  { who: "BRAND", desc: "Góp vốn bằng hàng hóa hoặc tiền marketing. Đẩy được hàng, đo được ROI, không cần \"đốt tiền\" mù quáng.", color: "text-violet" },
-  { who: "dCREATOR", desc: "Thu % thặng dư trên mỗi chiến dịch. Điều phối dữ liệu, dòng tiền và toàn bộ hệ sinh thái.", color: "text-lavender" },
-  { who: "CREATOR", desc: "Nhận chia sẻ doanh thu dài hạn thay vì fee ngắn hạn. Tự do chọn dự án phù hợp.", color: "text-pink-light" },
+  { who: "BRAND", desc: "Góp vốn bằng hàng hóa hoặc tiền marketing. Đẩy được hàng, đo được ROI, không cần \"đốt tiền\" mù quáng.", color: "text-primary" },
+  { who: "dCREATOR", desc: "Thu % thặng dư trên mỗi chiến dịch. Điều phối dữ liệu, dòng tiền và toàn bộ hệ sinh thái.", color: "text-foreground" },
+  { who: "CREATOR", desc: "Nhận chia sẻ doanh thu dài hạn thay vì fee ngắn hạn. Tự do chọn dự án phù hợp.", color: "text-primary" },
 ];
 
-const revenueBg = ["bg-primary/10", "bg-secondary/10", "bg-accent/10"];
+const revenueBg = ["bg-card border border-border", "bg-card border border-border", "bg-card border border-border"];
 
 const SolutionSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -27,8 +27,8 @@ const SolutionSection = () => {
           <p className="text-base text-muted-foreground leading-relaxed mb-6">
             Đối tác hạ tầng NONE Retail Hub cung cấp chuỗi cửa hàng vật lý, kho vận, POS và hệ thống bán lẻ O2O — dCreator không cần tự xây từ đầu.
           </p>
-          <div className="bg-secondary/10 border-l-[3px] border-violet px-6 py-5 rounded-r-lg">
-            <p className="text-lavender italic text-[15px] leading-relaxed">
+          <div className="bg-card border-l-[3px] border-primary px-6 py-5 rounded-r-lg">
+            <p className="text-foreground italic text-[15px] leading-relaxed">
               Brand không "đốt tiền quảng cáo" — họ góp vốn bằng hàng hóa. Creator không nhận fee ngắn hạn — họ là đồng sáng lập dự án bán hàng. User không chỉ "like" — họ nhận quà và được ghi danh.
             </p>
           </div>
@@ -36,14 +36,14 @@ const SolutionSection = () => {
 
         {/* Orbital visual */}
         <div className="relative h-[380px] hidden md:block">
-          <div className="absolute w-[280px] h-[280px] top-1/2 left-1/2 rounded-full border border-dashed border-primary/25 animate-spin-slow" />
-          <div className="absolute w-[180px] h-[180px] top-1/2 left-1/2 rounded-full border border-dashed border-primary/25 animate-spin-slow-reverse" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90px] h-[90px] rounded-full bg-gradient-primary flex items-center justify-center font-display text-4xl tracking-widest z-10 shadow-[0_0_60px_hsla(280,60%,55%,0.5)]">
+          <div className="absolute w-[280px] h-[280px] top-1/2 left-1/2 rounded-full border border-dashed border-border animate-spin-slow" />
+          <div className="absolute w-[180px] h-[180px] top-1/2 left-1/2 rounded-full border border-dashed border-border animate-spin-slow-reverse" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90px] h-[90px] rounded-full bg-card border border-primary/25 text-primary flex items-center justify-center font-display text-4xl tracking-widest z-10 shadow-[0_12px_24px_hsla(359,74%,52%,0.18)]">
             d
           </div>
-          <span className="absolute top-[15%] left-1/2 -translate-x-1/2 px-3.5 py-2 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase bg-primary/90 shadow-[0_0_20px_hsla(263,70%,50%,0.4)]">Brand</span>
-          <span className="absolute bottom-[15%] right-[15%] px-3.5 py-2 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase bg-accent/90 shadow-[0_0_20px_hsla(330,80%,55%,0.4)]">Creator</span>
-          <span className="absolute bottom-[15%] left-[15%] px-3.5 py-2 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase bg-secondary/90 shadow-[0_0_20px_hsla(280,60%,55%,0.4)]">User</span>
+          <span className="absolute top-[15%] left-1/2 -translate-x-1/2 px-3.5 py-2 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase bg-card border border-border">Brand</span>
+          <span className="absolute bottom-[15%] right-[15%] px-3.5 py-2 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase bg-card border border-border">Creator</span>
+          <span className="absolute bottom-[15%] left-[15%] px-3.5 py-2 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase bg-card border border-border">User</span>
         </div>
       </div>
 
