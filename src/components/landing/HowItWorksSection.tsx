@@ -31,7 +31,7 @@ const HowItWorksSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="how" className="py-24 px-6 md:px-16 bg-dark2">
+    <section id="how" className="py-20 md:py-24 px-4 sm:px-6 lg:px-16 bg-dark2">
       <div ref={ref} className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="flex items-center gap-3 text-[11px] tracking-[3px] uppercase text-accent font-semibold mb-4">
           <span className="w-8 h-px bg-accent" />Cách Hoạt Động
@@ -41,31 +41,31 @@ const HowItWorksSection = () => {
         </h2>
 
         {/* Tabs */}
-        <div className="flex gap-1 bg-card p-1.5 rounded-full w-fit mt-12 mb-12 border border-border">
+        <div className="flex gap-1 bg-card p-1.5 rounded-full w-full md:w-fit mt-10 md:mt-12 mb-10 md:mb-12 border border-border overflow-x-auto">
           <button
             onClick={() => setTab("small")}
-            className={`px-7 py-3 rounded-full text-sm font-medium tracking-wide transition-all ${tab === "small" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+            className={`px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-[13px] sm:text-sm whitespace-nowrap font-medium tracking-wide transition-all ${tab === "small" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
           >
             Creator Nhỏ Lẻ
           </button>
           <button
             onClick={() => setTab("large")}
-            className={`px-7 py-3 rounded-full text-sm font-medium tracking-wide transition-all ${tab === "large" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+            className={`px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-[13px] sm:text-sm whitespace-nowrap font-medium tracking-wide transition-all ${tab === "large" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
           >
             Creator Lớn / Dự Án
           </button>
         </div>
 
         {/* Steps */}
-        <div className="relative grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-0">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-0">
           <div className="hidden md:block absolute top-7 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
           {tabData[tab].map((s, i) => (
-            <div key={`${tab}-${i}`} className="text-center px-3">
-              <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5 font-display text-[22px] tracking-wide relative z-10 hover:scale-110 transition-transform ${stepColors[i]}`}>
+            <div key={`${tab}-${i}`} className="text-left md:text-center px-0 sm:px-3">
+              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center md:mx-auto mb-4 md:mb-5 font-display text-[19px] md:text-[22px] tracking-wide relative z-10 hover:scale-110 transition-transform ${stepColors[i]}`}>
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <h4 className="text-[13px] font-semibold text-foreground mb-2.5 leading-tight">{s.title}</h4>
-              <p className="text-[12px] text-muted-foreground leading-relaxed">{s.desc}</p>
+              <h4 className="text-[13px] sm:text-[14px] font-semibold text-foreground mb-2.5 leading-tight">{s.title}</h4>
+              <p className="text-[12px] sm:text-[13px] text-muted-foreground leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>

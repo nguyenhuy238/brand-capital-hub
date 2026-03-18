@@ -23,7 +23,7 @@ const WhyNowSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="why-now" className="py-24 px-6 md:px-16 bg-background border-y border-border/60">
+    <section id="why-now" className="py-20 md:py-24 px-4 sm:px-6 lg:px-16 bg-background border-y border-border/60">
       <div
         ref={ref}
         className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -31,8 +31,8 @@ const WhyNowSection = () => {
         <div className="flex items-center gap-3 text-[11px] tracking-[3px] uppercase text-accent font-semibold mb-4">
           <span className="w-8 h-px bg-accent" />Why Now
         </div>
-        <h2 className="font-display tracking-wide mb-6" style={{ fontSize: "clamp(34px, 5vw, 58px)", lineHeight: 1.08 }}>
-          TẠI SAO <span className="text-gradient">THỜI ĐIỂM NÀY?</span>
+        <h2 className="font-display tracking-wide mb-6" style={{ fontSize: "clamp(30px, 8vw, 58px)", lineHeight: 1.08 }}>
+          TẠI SAO LẠI CHỌN <span className="text-gradient">THỜI ĐIỂM NÀY?</span>
         </h2>
         <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-4xl">
           dCreator ra đời đúng điểm gãy của thị trường: nhu cầu tối ưu dòng tiền, nhu cầu thu nhập bền vững cho Creator,
@@ -40,13 +40,13 @@ const WhyNowSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0.5 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0.5 mt-8 md:mt-10">
         {reasons.map((item, index) => (
-          <article key={item.title} className="bg-card border border-border p-7 md:p-8">
+          <article key={item.title} className="bg-card border border-border p-5 sm:p-7 md:p-8">
             <div className="text-[11px] tracking-[2px] uppercase text-pink-light font-semibold mb-3">
               Động lực {String(index + 1).padStart(2, "0")}
             </div>
-            <h3 className="font-display text-[24px] leading-tight tracking-wide mb-4 text-foreground">{item.title}</h3>
+            <h3 className="font-display text-[21px] md:text-[24px] leading-tight tracking-wide mb-4 text-foreground">{item.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
           </article>
         ))}

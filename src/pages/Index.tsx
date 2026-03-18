@@ -23,10 +23,10 @@ const Index = () => (
     <Navbar />
     <Hero />
     <QuoteBanner />
+    <SolutionSection />
     <ProblemSection />
     <WhyCurrentSolutionsSection />
     <DifferentiationSection />
-    <SolutionSection />
     <NoneInfrastructureSection />
     <HowItWorksSection />
     <WhyNowSection />

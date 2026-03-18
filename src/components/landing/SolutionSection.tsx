@@ -12,26 +12,26 @@ const SolutionSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="solution" className="py-24 px-6 md:px-16 bg-background">
+    <section id="solution" className="py-20 md:py-24 px-4 sm:px-6 lg:px-16 bg-background">
       <div className="max-w-6xl mx-auto text-center mb-12 md:mb-16">
         <div className="flex items-center justify-center gap-3 text-[11px] tracking-[3px] uppercase text-accent font-semibold mb-4">
           <span className="w-8 h-px bg-accent" />Giải Pháp
         </div>
-        <h2 className="font-display tracking-wide" style={{ fontSize: "clamp(42px, 6vw, 72px)", lineHeight: 1 }}>
+        <h2 className="font-display tracking-wide" style={{ fontSize: "clamp(34px, 9vw, 72px)", lineHeight: 1 }}>
           MỘT SÂN CHƠI<br /><span className="text-gradient">BA BÊN CÙNG THẮNG</span>
         </h2>
       </div>
 
-      <div ref={ref} className={`grid grid-cols-1 md:grid-cols-2 gap-20 items-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+      <div ref={ref} className={`grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center mb-14 md:mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div>
-          <p className="text-base text-muted-foreground leading-relaxed mb-4">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
             dCreator xây dựng hệ thống Social Commerce kết hợp O2O — cho phép Brand, Creator, User tự tạo sân chơi để cùng chia sẻ rủi ro và lợi ích xung quanh doanh thu thực tế.
           </p>
-          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
             Đối tác hạ tầng NONE Retail Hub cung cấp chuỗi cửa hàng vật lý, kho vận, POS và hệ thống bán lẻ O2O — dCreator không cần tự xây từ đầu.
           </p>
-          <div className="bg-card border-l-[3px] border-primary px-6 py-5 rounded-r-lg">
-            <p className="text-foreground italic text-[15px] leading-relaxed">
+          <div className="bg-card border-l-[3px] border-primary px-4 sm:px-6 py-4 sm:py-5 rounded-r-lg">
+            <p className="text-foreground italic text-sm sm:text-[15px] leading-relaxed">
               Brand không "đốt tiền quảng cáo" — họ góp vốn bằng hàng hóa. Creator không nhận fee ngắn hạn — họ là đồng sáng lập dự án bán hàng. User không chỉ "like" — họ nhận quà và được ghi danh.
             </p>
           </div>
@@ -53,9 +53,9 @@ const SolutionSection = () => {
       {/* Revenue cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 mt-5">
         {revenueCards.map((c, i) => (
-          <div key={i} className={`${revenueBg[i]} p-8 text-center`}>
-            <div className={`font-display text-4xl tracking-widest mb-3 ${c.color}`}>{c.who}</div>
-            <p className="text-[13px] text-muted-foreground leading-relaxed">{c.desc}</p>
+          <div key={i} className={`${revenueBg[i]} p-6 md:p-8 text-center`}>
+            <div className={`font-display text-3xl md:text-4xl tracking-widest mb-3 ${c.color}`}>{c.who}</div>
+            <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
           </div>
         ))}
       </div>
